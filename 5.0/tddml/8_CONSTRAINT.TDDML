@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TDDML SYSTEM "../../../TDDML.dtd">
+<TDDML>
+  <!-- YCONTATTI_INSERITI (YCONTAT) -->
+  <AlterTable schema="SOFTRE" name="YCONTATTI_INSERITI">
+    <AddConstraint>
+      <Constraint name="WpuContatto_407204" refschema="THIP" reftable="WPU_RUBRICA_CONTATTI" schema="SOFTRE" ondelete="Restrict">
+        <ColumnRef name="R_ID_WPU_CONTATTO"/>
+      </Constraint>
+    </AddConstraint>
+  </AlterTable>
+</TDDML>

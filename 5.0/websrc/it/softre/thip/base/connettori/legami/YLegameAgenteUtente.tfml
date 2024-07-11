@@ -1,0 +1,25 @@
+<tfml>
+  <generator type="form"/>
+  <form classHdr="YLegameAgenteUtente"
+    name="YLegameAgenteUtenteForm"
+    locktype="nolock"
+    errorList="yes" menubar="yes" toolbar="yes" submitReset="none"
+    jsLibraryName="it/softre/thip/base/connettori/legami/YLegameAgenteUtente.js"
+    onLoadPresent="yes"
+    header="com.thera.thermfw.common.Header.jsp"
+    footer="com.thera.thermfw.common.Footer.jsp">
+    <menubar  name="myMenuBar">
+      <import file="it/thera/thip/cs/defObjMenu.tfml"/>
+    </menubar>
+    <toolbar name="myToolBar" imgwidth="16" imgheight="16">
+      <import file="it/thera/thip/cs/defObjMenu.tfml"/>
+    </toolbar>
+    <tabbed name="mytabbed" height="100%" width="100%">
+      <tab name="tab1" resourceFile="it.softre.thip.base.connettori.legami.resources.YLegameAgenteUtente" resourceID="tab1">
+        <multisearchform name="Agente" classRD="Agente"/>
+        <multisearchform name="Utente" classRD="Utente"/>
+      </tab>
+    </tabbed>
+  </form>
+</tfml>
+

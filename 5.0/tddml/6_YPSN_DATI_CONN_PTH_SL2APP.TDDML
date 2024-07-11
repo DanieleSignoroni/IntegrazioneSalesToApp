@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TDDML SYSTEM "../../../TDDML.dtd">
+<TDDML>
+  <!-- YPSN_DATI_CONN_PTH_SL2APP (YPSN_DA): Pers connettore Panthera  Sales2App; -->
+  <CreateTable schema="SOFTRE" name="YPSN_DATI_CONN_PTH_SL2APP" shortname="YPSN_DA">
+    <Column name="ID_AZIENDA" shortname="ID_AZIENDA" type="char" length="3" nullable="no"/>
+    <Column name="STATO" shortname="STATO" type="char" length="1" nullable="no"/>
+    <Column name="R_UTENTE_CRZ" shortname="R_UTENTE_C" type="char" length="20" nullable="yes"/>
+    <Column name="TIMESTAMP_CRZ" shortname="TIMESTAMP_" type="timestamp" nullable="no" default="CURRENT TIMESTAMP"/>
+    <Column name="R_UTENTE_AGG" shortname="R_UTENTE_A" type="char" length="20" nullable="yes"/>
+    <Column name="TIMESTAMP_AGG" shortname="TIMESTAMP0" type="timestamp" nullable="no" default="CURRENT TIMESTAMP"/>
+    <Column name="API_KEY" shortname="API_KEY" type="varchar" length="100" nullable="no"/>
+    <Column name="USER_CALLS" shortname="USER_CALLS" type="varchar" length="50" nullable="no"/>
+    <Column name="PWD_CALLS" shortname="PWD_CALLS" type="varchar" length="100" nullable="no"/>
+    <Column name="URL_CALLS" shortname="URL_CALLS" type="varchar" length="300" nullable="no"/>
+  </CreateTable>
+  <CreateIndex schema="SOFTRE" name="YPSN_DATI_CONN_I01" tabschema="SOFTRE" tabname="YPSN_DATI_CONN_PTH_SL2APP" shortname="YPSN_D_I01" unique="yes">
+    <IndexCol name="ID_AZIENDA" order="Asc"/>
+  </CreateIndex>
+  <AlterTable schema="SOFTRE" name="YPSN_DATI_CONN_PTH_SL2APP">
+    <AddPrimaryKey>
+      <PrimaryKey>
+        <ColumnRef name="ID_AZIENDA"/>
+      </PrimaryKey>
+    </AddPrimaryKey>
+  </AlterTable>
+  <Comment>
+    <CommentTable schema="SOFTRE" name="YPSN_DATI_CONN_PTH_SL2APP" text="Pers connettore Panthera  Sales2App">
+      <CommentColumn name="ID_AZIENDA" text="Azienda"/>
+      <CommentColumn name="STATO" text="Stato"/>
+      <CommentColumn name="R_UTENTE_CRZ" text="Utente creazione"/>
+      <CommentColumn name="TIMESTAMP_CRZ" text="Timestamp creazione"/>
+      <CommentColumn name="R_UTENTE_AGG" text="Utente ultima modifica"/>
+      <CommentColumn name="TIMESTAMP_AGG" text="Timestamp ultima modifica"/>
+      <CommentColumn name="API_KEY" text="Api Key"/>
+      <CommentColumn name="USER_CALLS" text="Utente chiamate"/>
+      <CommentColumn name="PWD_CALLS" text="Password utente chiamate"/>
+      <CommentColumn name="URL_CALLS" text="Url chiamate"/>
+    </CommentTable>
+    <CommentIndex schema="SOFTRE" name="YPSN_DATI_CONN_I01" text="Primary Key"/>
+  </Comment>
+  <Grant schema="SOFTRE" name="YPSN_DATI_CONN_PTH_SL2APP"/>
+</TDDML>

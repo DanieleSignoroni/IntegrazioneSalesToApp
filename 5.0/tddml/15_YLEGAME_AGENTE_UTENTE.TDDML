@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TDDML SYSTEM "../../../TDDML.dtd">
+<TDDML>
+  <!-- YLEGAME_AGENTE_UTENTE (YLEGAME): Legame (Agente-Utente) - Sales 2 Ap; -->
+  <CreateTable schema="SOFTRE" name="YLEGAME_AGENTE_UTENTE" shortname="YLEGAME">
+    <Column name="ID_AZIENDA" shortname="ID_AZIENDA" type="char" length="3" nullable="no"/>
+    <Column name="STATO" shortname="STATO" type="char" length="1" nullable="no"/>
+    <Column name="R_UTENTE_CRZ" shortname="R_UTENTE_C" type="char" length="20" nullable="yes"/>
+    <Column name="TIMESTAMP_CRZ" shortname="TIMESTAMP_" type="timestamp" nullable="no" default="CURRENT TIMESTAMP"/>
+    <Column name="R_UTENTE_AGG" shortname="R_UTENTE_A" type="char" length="20" nullable="yes"/>
+    <Column name="TIMESTAMP_AGG" shortname="TIMESTAMP0" type="timestamp" nullable="no" default="CURRENT TIMESTAMP"/>
+    <Column name="R_AGENTE" shortname="R_AGENTE" type="char" length="3" nullable="no"/>
+    <Column name="R_UTENTE" shortname="R_UTENTE" type="char" length="40" nullable="yes"/>
+  </CreateTable>
+  <CreateIndex schema="SOFTRE" name="YLEGAME_AGENTE_I01" tabschema="SOFTRE" tabname="YLEGAME_AGENTE_UTENTE" shortname="YLEGAM_I01" unique="yes">
+    <IndexCol name="ID_AZIENDA" order="Asc"/>
+    <IndexCol name="R_AGENTE" order="Asc"/>
+  </CreateIndex>
+  <AlterTable schema="SOFTRE" name="YLEGAME_AGENTE_UTENTE">
+    <AddPrimaryKey>
+      <PrimaryKey>
+        <ColumnRef name="ID_AZIENDA"/>
+        <ColumnRef name="R_AGENTE"/>
+      </PrimaryKey>
+    </AddPrimaryKey>
+  </AlterTable>
+  <Comment>
+    <CommentTable schema="SOFTRE" name="YLEGAME_AGENTE_UTENTE" text="Legame (Agente-Utente) - Sales 2 Ap">
+      <CommentColumn name="ID_AZIENDA" text="Azienda"/>
+      <CommentColumn name="STATO" text="Stato"/>
+      <CommentColumn name="R_UTENTE_CRZ" text="Utente creazione"/>
+      <CommentColumn name="TIMESTAMP_CRZ" text="Timestamp creazione"/>
+      <CommentColumn name="R_UTENTE_AGG" text="Utente ultima modifica"/>
+      <CommentColumn name="TIMESTAMP_AGG" text="Timestamp ultima modifica"/>
+      <CommentColumn name="R_AGENTE" text="Agente"/>
+      <CommentColumn name="R_UTENTE" text="Hash utente s2app"/>
+    </CommentTable>
+    <CommentIndex schema="SOFTRE" name="YLEGAME_AGENTE_I01" text="Primary Key"/>
+  </Comment>
+  <Grant schema="SOFTRE" name="YLEGAME_AGENTE_UTENTE"/>
+</TDDML>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TDDML SYSTEM "../../../TDDML.dtd">
+<TDDML>
+  <DropTable name="YUTENTI_SALES_2_APP" schema="SOFTRE">
+    <Continue/>
+  </DropTable>
+</TDDML>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TDDML SYSTEM "../../../TDDML.dtd">
+<TDDML>
+  <AlterTable schema="SOFTRE" name="YPSN_DATI_CONN_PTH_SL2APP">
+    <AddColumn>
+      <Column name="R_HASH_USER_JOLLY" shortname="USR_JOLLY" type="varchar" length="40" nullable="yes"/>
+    </AddColumn>
+  </AlterTable>
+  <Comment>
+    <CommentTable schema="SOFTRE" name="YPSN_DATI_CONN_PTH_SL2APP" text="Pers. dati connettore">
+      <CommentColumn name="R_HASH_USER_JOLLY" text="User jolly"/>
+    </CommentTable>
+  </Comment>
+</TDDML>

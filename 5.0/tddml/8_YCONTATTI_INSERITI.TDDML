@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TDDML SYSTEM "../../../TDDML.dtd">
+<TDDML>
+  <!-- YCONTATTI_INSERITI (YCONTAT): Tabella contatti inseriti; -->
+  <CreateTable schema="SOFTRE" name="YCONTATTI_INSERITI" shortname="YCONTAT">
+    <Column name="R_ANAGRAFICO" shortname="A" type="integer" nullable="no"/>
+	<Column name="R_SEQUENZA_RUB" shortname="S" type="integer" nullable="no"/>
+    <Column name="STATO" shortname="STATO" type="char" length="1" nullable="no"/>
+    <Column name="R_UTENTE_CRZ" shortname="R_UTENTE_C" type="char" length="20" nullable="yes"/>
+    <Column name="TIMESTAMP_CRZ" shortname="TIMESTAMP_" type="timestamp" nullable="no" default="CURRENT TIMESTAMP"/>
+    <Column name="R_UTENTE_AGG" shortname="R_UTENTE_A" type="char" length="20" nullable="yes"/>
+    <Column name="TIMESTAMP_AGG" shortname="TIMESTAMP0" type="timestamp" nullable="no" default="CURRENT TIMESTAMP"/>
+	<Column name="HASH" shortname="HASH" type="char" length="40" nullable="no"/>
+  </CreateTable>
+  <CreateIndex schema="SOFTRE" name="YCONTATTI_INSE_I01" tabschema="SOFTRE" tabname="YCONTATTI_INSERITI" shortname="YCONTA_I01" unique="yes">
+    <IndexCol name="R_ANAGRAFICO" order="Asc"/>
+	<IndexCol name="R_SEQUENZA_RUB" order="Asc"/>
+  </CreateIndex>
+  <AlterTable schema="SOFTRE" name="YCONTATTI_INSERITI">
+    <AddPrimaryKey>
+      <PrimaryKey>
+        <ColumnRef name="R_ANAGRAFICO"/>
+		<ColumnRef name="R_SEQUENZA_RUB"/>
+		</PrimaryKey>
+    </AddPrimaryKey>
+  </AlterTable>
+  <Comment>
+    <CommentTable schema="SOFTRE" name="YCONTATTI_INSERITI" text="Tabella contatti inseriti">
+      <CommentColumn name="R_ANAGRAFICO" text="Contatto"/>
+	  <CommentColumn name="R_SEQUENZA_RUB" text="Contatto"/>
+      <CommentColumn name="STATO" text="Stato"/>
+      <CommentColumn name="R_UTENTE_CRZ" text="Utente creazione"/>
+      <CommentColumn name="TIMESTAMP_CRZ" text="Timestamp creazione"/>
+      <CommentColumn name="R_UTENTE_AGG" text="Utente ultima modifica"/>
+      <CommentColumn name="TIMESTAMP_AGG" text="Timestamp ultima modifica"/>
+	  <CommentColumn name="HASH" text="Hash"/>
+    </CommentTable>
+    <CommentIndex schema="SOFTRE" name="YCONTATTI_INSE_I01" text="Primary Key"/>
+  </Comment>
+  <Grant schema="SOFTRE" name="YCONTATTI_INSERITI"/>
+</TDDML>
